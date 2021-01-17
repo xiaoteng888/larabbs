@@ -22,6 +22,8 @@ class TopicFactory extends Factory
             'excerpt' => $sentence,
             'user_id' => $this->faker->randomElement($userIds),
             'category_id' => $this->faker->randomElement($categoryIds),
+            'created_at' => $this->faker->datetime(),
+            'updated_at' => $this->faker->datetime(),
         ];
     }
 }
