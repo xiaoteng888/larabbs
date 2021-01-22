@@ -11,6 +11,8 @@
 
 	<!-- Style -->
 	<link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
+
+    @yield('styles')
 </head>
 <body>
     <div id="app" class="{{route_class()}}-page">
@@ -23,5 +25,7 @@
     </div> 
     <!-- Scripts -->
     <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
+
+    @yield('scripts')
 </body>
 </html>
