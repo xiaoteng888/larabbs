@@ -40,4 +40,5 @@ class TopicObserver
            dispatch(new TranslateSlug($topic));
        }  
     }
+
 }
