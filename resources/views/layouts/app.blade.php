@@ -8,7 +8,8 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{csrf_token()}}">
 	<title>@yield('title','首页')-论坛网站</title>
-    <meta name="description" content="@yield('description','sm爱好者')">  
+    <meta name="description" content="@yield('description',$site->seo_description ? :'sm爱好者社区')">
+    <meta name="keywords" content="@yield('keyword', $site->seo_key ? :'sm,社区,论坛'))" />
 	<!-- Style -->
 	<link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
 
@@ -21,7 +22,7 @@
     		@include('shared._messages')
     		@yield('content')
     	</div>
-    	@include('layouts._footer')
+    	@include('layouts._footer',['site' => $site])
     </div> 
     <!-- Scripts -->
     <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
