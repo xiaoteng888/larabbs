@@ -8,9 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
+    use HasRoles;
     use HasFactory,MustVerifyEmailTrait;
     use Notifiable {
         notify as protected laravelNotify;
@@ -48,6 +52,14 @@ class User extends Authenticatable implements MustVerifyEmailContract
         'email_verified_at' => 'datetime',
     ];
 
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(function($user){
+             $user->remember_token = Str::random(10);
+        }); 
+    }
+
     public function topics()
     {
         return $this->hasMany(Topic::class,'user_id','id');
@@ -81,5 +93,10 @@ class User extends Authenticatable implements MustVerifyEmailContract
         $this->notification_count = 0;
         $this->save();
         $this->unreadNotifications->markAsRead();
+    }
+    
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class,'model_has_roles','model_id','role_id');
     }
 }
