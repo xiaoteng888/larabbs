@@ -60,6 +60,14 @@ class User extends Authenticatable implements MustVerifyEmailContract
         }); 
     }
 
+    public function setPasswordAttribute($v)
+    {
+        if(strlen($v) != 60){
+            $v = bcrypt($v);
+        }
+        $this->attributes['password'] = $v;
+    }
+
     public function topics()
     {
         return $this->hasMany(Topic::class,'user_id','id');

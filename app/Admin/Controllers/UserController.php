@@ -102,12 +102,12 @@ class UserController extends AdminController
                     return array_column($v, 'id');
                 });
 
-            $form->saving(function (Form $form){
+            /*$form->saving(function (Form $form){
                 if($form->password){
                     $form->password = bcrypt($form->password);
                 }
                 
-            });
+            });*/
 
                 $form->submitted(function(Form $form){
 
