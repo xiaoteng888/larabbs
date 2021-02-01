@@ -9,7 +9,6 @@ class PagesController extends Controller
 {
     public function root()
     {   
-    	$site = Site::first();
-    	return view('layouts.app',compact('site'));
+    	return view('layouts.app');
     }
 }

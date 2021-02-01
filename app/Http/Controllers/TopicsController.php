@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Topic;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
@@ -17,11 +18,12 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index(Request $request,Topic $topic)
+	public function index(Request $request,Topic $topic,User $user)
 	{
 		$topics = $topic->withOrder($request->order)->with('category','user')->paginate(20);
 		$categories = Category::get();
-		return view('topics.index', compact('topics','categories'));
+        $active_users = $user->getActiveUsers(); 
+		return view('topics.index', compact('topics','categories','active_users'));
 	}
 
     public function show(Topic $topic,Request $request)
