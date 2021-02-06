@@ -44,6 +44,7 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection payload
      * @property Grid\Column|Collection exception
      * @property Grid\Column|Collection failed_at
+     * @property Grid\Column|Collection link
      * @property Grid\Column|Collection model_type
      * @property Grid\Column|Collection model_id
      * @property Grid\Column|Collection notifiable_type
@@ -55,6 +56,8 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection guard_name
      * @property Grid\Column|Collection topic_id
      * @property Grid\Column|Collection content
+     * @property Grid\Column|Collection seo_description
+     * @property Grid\Column|Collection seo_key
      * @property Grid\Column|Collection body
      * @property Grid\Column|Collection category_id
      * @property Grid\Column|Collection reply_count
@@ -98,6 +101,7 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection payload(string $label = null)
      * @method Grid\Column|Collection exception(string $label = null)
      * @method Grid\Column|Collection failed_at(string $label = null)
+     * @method Grid\Column|Collection link(string $label = null)
      * @method Grid\Column|Collection model_type(string $label = null)
      * @method Grid\Column|Collection model_id(string $label = null)
      * @method Grid\Column|Collection notifiable_type(string $label = null)
@@ -109,6 +113,8 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection guard_name(string $label = null)
      * @method Grid\Column|Collection topic_id(string $label = null)
      * @method Grid\Column|Collection content(string $label = null)
+     * @method Grid\Column|Collection seo_description(string $label = null)
+     * @method Grid\Column|Collection seo_key(string $label = null)
      * @method Grid\Column|Collection body(string $label = null)
      * @method Grid\Column|Collection category_id(string $label = null)
      * @method Grid\Column|Collection reply_count(string $label = null)
@@ -157,6 +163,7 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection payload
      * @property Show\Field|Collection exception
      * @property Show\Field|Collection failed_at
+     * @property Show\Field|Collection link
      * @property Show\Field|Collection model_type
      * @property Show\Field|Collection model_id
      * @property Show\Field|Collection notifiable_type
@@ -168,6 +175,8 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection guard_name
      * @property Show\Field|Collection topic_id
      * @property Show\Field|Collection content
+     * @property Show\Field|Collection seo_description
+     * @property Show\Field|Collection seo_key
      * @property Show\Field|Collection body
      * @property Show\Field|Collection category_id
      * @property Show\Field|Collection reply_count
@@ -211,6 +220,7 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection payload(string $label = null)
      * @method Show\Field|Collection exception(string $label = null)
      * @method Show\Field|Collection failed_at(string $label = null)
+     * @method Show\Field|Collection link(string $label = null)
      * @method Show\Field|Collection model_type(string $label = null)
      * @method Show\Field|Collection model_id(string $label = null)
      * @method Show\Field|Collection notifiable_type(string $label = null)
@@ -222,6 +232,8 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection guard_name(string $label = null)
      * @method Show\Field|Collection topic_id(string $label = null)
      * @method Show\Field|Collection content(string $label = null)
+     * @method Show\Field|Collection seo_description(string $label = null)
+     * @method Show\Field|Collection seo_key(string $label = null)
      * @method Show\Field|Collection body(string $label = null)
      * @method Show\Field|Collection category_id(string $label = null)
      * @method Show\Field|Collection reply_count(string $label = null)

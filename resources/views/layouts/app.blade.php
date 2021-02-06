@@ -8,8 +8,8 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{csrf_token()}}">
 	<title>@yield('title','首页')-论坛网站</title>
-    <meta name="description" content="@yield('description',App\Models\Site::first()->seo_description ? :'sm爱好者社区')">
-    <meta name="keywords" content="@yield('keyword', App\Models\Site::first()->seo_key ? :'sm,社区,论坛'))" />
+    <meta name="description" content="@yield('description',isset(App\Models\Site::first()->seo_description) ? :'sm爱好者社区')">
+    <meta name="keywords" content="@yield('keyword', isset(App\Models\Site::first()->seo_key) ? :'sm,社区,论坛'))" />
 	<!-- Style -->
 	<link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
 

@@ -20,4 +20,5 @@ Route::group([
     $router->resource('topics', 'TopicController');
     $router->resource('categories', 'CategoryController');
     $router->resource('sites', 'SiteController');
+    $router->resource('links', 'LinkController');
 });
