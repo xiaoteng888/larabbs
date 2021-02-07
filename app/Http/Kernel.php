@@ -13,6 +13,8 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 全局中间件
+
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
@@ -28,7 +30,12 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 设定中间件组
+
     protected $middlewareGroups = [
+        // Web 中间件组，应用于 routes/web.php 路由文件，
+        // 在 RouteServiceProvider 中设定
+
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -38,6 +45,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\EnsureEmailIsVerified::class,
+            // 记录用户最后活跃时间
+            \App\Http\Middleware\RecordLastActivedTime::class,
         ],
 
         'api' => [
