@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/','PagesController@root')->name('root');
+Route::get('/','TopicsController@index')->name('root');
 
 // Email 认证相关路由
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
